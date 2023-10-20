@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "users" ALTER COLUMN "heigh" DROP NOT NULL,
+ALTER COLUMN "weigh" DROP NOT NULL;
