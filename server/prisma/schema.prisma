@@ -77,6 +77,7 @@ model likes {
   userid String? @db.VarChar
   postid String? @db.VarChar
 }
+
 model messages {
   id      String  @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
   sender  String?

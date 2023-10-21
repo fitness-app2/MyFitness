@@ -4,11 +4,13 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, Alert, TextInput } fro
 import { CheckBox } from 'react-native-elements';
 import { SocialIcon } from 'react-native-elements'
 import { ButtonGroup } from '@rneui/themed'
-import { auth } from '../../Firebase';
+// import { getAuth } from '../../Firebase';
+import { getAuth } from 'firebase/auth';
+import {firebase} from '../../Firebase/index'
 import {  signInWithEmailAndPassword,sendPasswordResetEmail } from 'firebase/auth';
 import axios from 'axios';
 import Spinner from 'react-native-loading-spinner-overlay';
-import link from '../../link';
+// import link from '../../link';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import ADRESS_API from '../../API';
 
@@ -20,6 +22,7 @@ export default function Login() {
   const [loading, setLoading] = useState(false);
   const [userData, setUserData]=useState({})
 
+  const auth = getAuth();
 
   const storeData = async (key, value) => {
     try {
@@ -46,17 +49,18 @@ export default function Login() {
       });
   }
   const userlogin=(id)=>{
-console.log("link",link)
-axios.get(`http://${ADRESS_API}:9001/users/login/${id}`) //check the ip address run cmd ipconfig or contact yassin
+console.log("link", ADRESS_API)
+axios.get(`http://${ADRESS_API}:9001/users/login/${id}`) 
 .then(res=>{
   setLoading(false)
+  console.log("yassine")
   storeData("current",id)
-  
-  navigation.navigate('TabNav',{user : res.data})
+  navigation.navigate('Home',{user : res.data});
+  // navigation.navigate('TabNav')
   setUserData(res.data)})
 .catch(err=>{
   setLoading(false)
-  console.log(err)
+  console.log(err,"yassou")
   Alert.alert(err)})
 
   }
@@ -70,9 +74,13 @@ axios.get(`http://${ADRESS_API}:9001/users/login/${id}`) //check the ip address 
     })
     .catch(error => {
       setLoading(false)
-      const errorCode = error.code
+      // console.log(email);
+      // console.log(pass);
+      // console.log(auth);
+      console.log(error);
+      // const errorCode = error.code
       const errorMessage = error.message
-      Alert.alert(errorCode)
+      Alert.alert(error,"err login")
     })
   }
 
@@ -93,7 +101,7 @@ axios.get(`http://${ADRESS_API}:9001/users/login/${id}`) //check the ip address 
         selectedIndex={0}
         onPress={() => navigation.navigate('Signup')}
         containerStyle={styles.buttonGroupContainer}
-        selectedButtonStyle={styles.selectedButton} // Set the selected button color
+        selectedButtonStyle={styles.selectedButton} 
       />
       <TextInput style={styles.input} onChangeText={setEmail} placeholder="email-address" keyboardType="email-address" />
       <TextInput style={styles.input} onChangeText={setPass} placeholder="password" keyboardType="default" secureTextEntry={true} />

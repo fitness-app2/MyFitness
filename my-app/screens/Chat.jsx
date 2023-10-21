@@ -1,8 +1,11 @@
-import { View, Text } from 'react-native'
+// import { View, Text } from 'react-native'
 import React from 'react'
 import { io } from 'socket.io-client';
 import axios from 'axios';
-import link from '../link';
+import ADRESS_API from '../API'
+import { View, Text, StyleSheet, Dimensions, Animated, TextInput, PanResponder, ScrollView, Image } from 'react-native';
+import { useRoute, useNavigation } from '@react-navigation/native';
+
 
  function Chat() {
   const route = useRoute();
@@ -14,7 +17,7 @@ import link from '../link';
   const [foreign, setForeign] = useState();
 
 
-  const socket = io('http://192.168.227.176:8001');
+  const socket = io('http://192.168.43.149');
 
   const scrollViewRef = useRef();
   const fadeAnim = useRef(new Animated.Value(0)).current;
@@ -37,7 +40,7 @@ import link from '../link';
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`${link}/user/${foreignid}`);
+        const response = await axios.get(`${ADRESS_API}/user/${foreignid}`);
         setForeign(response.data);
         navigation.setOptions({
           headerTitle: () => <ChatHeader username={response.data.username} pic={response.data.profilepic} />,
@@ -54,7 +57,7 @@ import link from '../link';
 
   useEffect(() => {
     socket.emit('startConversation', chatRoom[0][0].id);
-    socket.on('connection', () => setCheckSocket(true));
+    socket.on('connection', () => setCheckSocket(true)); 
   }, []);
 
   useEffect(() => {
@@ -84,7 +87,7 @@ import link from '../link';
     setOldMsgs((prevMsgs) => [...prevMsgs, newMsg]);
 
     axios
-      .post(`${link}/api/messages/msg`, newMsg)
+      .post(`${ADRESS_API}/api/messages/msg`, newMsg)
       .then((res) => {
         const chatroom = chatRoom[0][0].id;
         socket.emit('message sent', { msg, chatroom, currentid });
@@ -93,7 +96,7 @@ import link from '../link';
       .catch((err) => console.log(err));
 
     axios
-      .post(`${link}/conversation/latest`, { id: chatRoom[0][0].id, msg: msg })
+      .post(`${ADRESS_API}/conversation/latest`, { id: chatRoom[0][0].id, msg: msg })
       .then((res) => console.log(res))
       .catch((err) => console.log(err));
   };
@@ -226,5 +229,18 @@ const styles = StyleSheet.create({
     paddingVertical: 5,
   },
 });
+
+// export default Chat;
+// import React from 'react';
+// import { View, Text } from 'react-native';
+
+// function Chat() {
+//   return (
+//     <View>
+//       <Text>Chat Component</Text>
+//       {/* Add your chat UI here */}
+//     </View>
+//   );
+// }
 
 export default Chat;

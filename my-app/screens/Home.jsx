@@ -5,6 +5,9 @@ import { Fontisto } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import axios from 'axios';
+import { useRoute } from '@react-navigation/native';
+
+
 
 import Dropdown from '../component/Dropdown';
 
@@ -24,14 +27,14 @@ export default function Home() {
   };
   
   const handleDropdownOption = (option) => {
-    // Handle the selected option (e.g., delete or update)
+    
     if (option === 'delete') {
-      // Handle delete action
+
     } else if (option === 'update') {
-      // Handle update action
+    
     }
 
-    // Close the dropdown after the action is performed
+   
     setShowDropdown(false);
   };
 

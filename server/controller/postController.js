@@ -12,7 +12,7 @@ exports.createPost = async (req, res) => {
 
   try {
     if (data.pic) {
-      // Multiple pictures were uploaded
+     
       const picUrls = [];
       for (const pic of data.pic) {
         const result = await cloudinary.uploader.upload(pic);

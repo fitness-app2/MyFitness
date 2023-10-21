@@ -51,11 +51,11 @@ export default function SignUp2(){
         axios.post(`http://${ADRESS_API}:9001/users/signup`,userCredential) 
        
         .then(res=> {
-          // setLoading(false)
+          setLoading(false)
           navigation.navigate('login')
         })
         .catch(err=>{
-          // setLoading(false)
+          setLoading(false)
           Alert.alert("unexpected error please try again in a couple of minutes")})
 
 
