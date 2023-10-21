@@ -4,7 +4,7 @@ import Icon from "react-native-vector-icons/Ionicons";
 import axios from "axios";
 import link from "../link";
 import { useNavigation } from "@react-navigation/native";
-import { auth } from "../fireBase";
+// import { auth } from "../fireBase";
 
 export default function OnePost({ route }) {
   const { data } = route.params;

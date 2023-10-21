@@ -27,7 +27,7 @@ exports.newConversation = async (req, res) => {
       res.send(createmsg);
     } catch (error) {
       console.error(error);
-      res.status(500).send('Internal Server Error');
+      res.status(500).send('Internal Server newmsg');
     }
   }
 
@@ -40,7 +40,7 @@ exports.newConversation = async (req, res) => {
 res.send(latestmsg)
     } catch(err){
       console.log(err)
-      res.status(500).send('Internal Server Error');
+      res.status(500).send('Internal Server latestmsg');
     }
   }
 
@@ -52,6 +52,6 @@ console.log(req.params.uid)
 res.send(allConv)
     } catch(err){
       console.log(err)
-      res.status(500).send('Internal Server Error');
+      res.status(500).send('Internal Server get all');
     }
   }

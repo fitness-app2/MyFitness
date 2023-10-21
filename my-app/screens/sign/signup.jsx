@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, Alert, TextInput } from 'react-native';
 // import { CheckBox } from 'react-native-elements';
+
 // import { SocialIcon } from 'react-native-elements'
 import { ButtonGroup } from '@rneui/themed'
 import {  useNavigation } from '@react-navigation/native';

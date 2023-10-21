@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, Button, FlatList, Dimensions, Pressable, ImageBackground, TouchableWithoutFeedback  } from 'react-native';
 import { Feather } from '@expo/vector-icons';
-import link from '../link';
+// import link from '../link';
 import axios from 'axios';
 import { useRoute } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';

@@ -1,6 +1,6 @@
 import { View, Text, Platform} from 'react-native'
 import React from 'react'
-import{Chat,Create,Profile,Search,Home} from "../screens/Index" 
+import{Chat,Create,Profile,Search,Home} from "./Index" 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Octicons,Ionicons,FontAwesome,AntDesign } from '@expo/vector-icons';
 const Tab =createBottomTabNavigator();
@@ -9,15 +9,15 @@ const screenOptions = {
   headerShown: false,
   keyboardHidesTabBar: true,
   tabBarStyle: {
-    backgroundColor: 'black', // Use a transparent background
-    borderTopWidth: 0, // Remove the top border
-    width: '100%', // Set the width to 90% of the screen width
-    alignSelf: 'center', // Center the tab bar horizontally
+    backgroundColor: 'black', 
+    borderTopWidth: 0, 
+    width: '100%', 
+    alignSelf: 'center', 
   },
   tabBarItemStyle: {
-    flex: 1, // Make each tab item take up equal space
-    alignItems: 'center', // Center the content horizontally
-    justifyContent: 'center', // Center the content vertically
+    flex: 1, 
+    alignItems: 'center', 
+    justifyContent: 'center',
   },
 };
 
@@ -35,7 +35,7 @@ export default function TabNavigation() {
   }
   
 }} />
-<Tab.Screen name="Chat" component={Chat} options={{
+{/* <Tab.Screen name="Chat" component={Chat} options={{
   tabBarIcon:({focused})=>{
     return(
       <View style={{alignItems: "center", justifyContent: "center"}}>
@@ -44,7 +44,7 @@ export default function TabNavigation() {
     )
   }
   
-}} />
+}} /> */}
 <Tab.Screen name="Create" component={Create}   options={{
             tabBarIcon: ({focused})=>{
               return (
@@ -86,7 +86,7 @@ export default function TabNavigation() {
   
 }} />
 
-
+{/* <Tab.Screen name="Chat" component={Chat} /> */}
     </Tab.Navigator>
   )
 }
