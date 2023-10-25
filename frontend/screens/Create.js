@@ -41,6 +41,7 @@ export default function CreatePost({ route }) {
 
     if (!result.canceled) {
       setPhotos([...photos, "data:image/jpeg;base64," + result.base64]);
+      //1
     }
   };
 
@@ -104,7 +105,7 @@ export default function CreatePost({ route }) {
         textContent={"Loading..."}
         textStyle={styles.spinnerTextStyle}
       />
-      <Image source={require("../assets/Capture d'écran 2023-06-22 150048.png")} style={styles.logo} />
+      <Image source={require("../assets/HD-wallpaper-iphoney-929-apple-blur-color-cool-iphone-live-new.jpg")} style={styles.logo} />
       <TextInput
         placeholder='Description'
         value={description}
