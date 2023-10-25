@@ -42,6 +42,7 @@ app.use("/userss", user.getAll);
 
 app.use("/users", usersRouter);
 
+
 app.use("/post", post);
 app.use("/follow", follow);
 app.use("/search", search);

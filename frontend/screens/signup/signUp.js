@@ -108,7 +108,7 @@ export default function SignUp() {
         fadeDuration={0}
         style={styles.googleLogo}
       />
-      <Text style={styles.footer}>© Valeria 2023</Text>
+      <Text style={styles.footer}>© fitnessy 2023</Text>
     </View>
   );
 }
