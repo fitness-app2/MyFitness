@@ -98,20 +98,16 @@ export default function SignUp2(){
       textStyle={styles.spinnerTextStyle}
     />
 
-<Image
-        source={require('../../assets/qq.png')}
-        fadeDuration={0}
-        style={styles.logo}
-      />
+
        
        <TextInput style={styles.input} onChangeText={setUsername} placeholder="username" keyboardType="email-address" />
 
-   <Text style={{color:"grey",
+   <Text style={{color:"black",
 left:-70,
 top:30}}>please enter you date of birth</Text>
         {!isPickerShow && (
           <View style={styles.btnContainer}>
-            <Button title={date.toUTCString().slice(0, 16)} color="#B4966A" onPress={showPicker} />
+            <Button title={date.toUTCString().slice(0, 16)} color="black" onPress={showPicker} />
           </View>
         )}
   
@@ -141,82 +137,85 @@ top:30}}>please enter you date of birth</Text>
     }
 
 
+    
+    
     const styles = StyleSheet.create({
-        buttonText2: {
-            fontSize: 16,
-            color: '#FFFFFF',
-            left: 80,
-            top: 2,
-          },
-        button2: {
-            backgroundColor: '#B4966A',
-            padding: 10,
-            borderRadius: 55,
-            marginTop: 50,
-            width: 327,
-            height: 55,
-            top: 110,
-          },
-        logo: {
-            width: 160,
-            height: 100,
-            top: -150,
-          },
-        button: {
-            backgroundColor: '#B4966A',
-            borderRadius: 100,
-            width: 65,
-            height: 65,
-            top: 70,
+      buttonText2: {
+          fontSize: 16,
+          color: 'white',
+          left: 35,
+          top: 2,
         },
-        buttonText:{
-            fontSize: 50,
-            color:'#F0EDE4',
-            left:16,
-            top:-5
-        },
-        container: {
-            backgroundColor: '#F0EDE4',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          flex: 1,
-          justifyContent: 'center',
-          padding: 30,
-        },
-        pickedDateContainer: {
-          padding: 20,
-          backgroundColor: '#eee',
+      button2: {
+          backgroundColor: 'black',
+          padding: 10,
           borderRadius: 10,
+          marginTop: 50,
+          width: 227,
+          height: 55,
+          top: 110,
         },
-        pickedDate: {
-          fontSize: 18,
+      logo: {
+          width: 160,
+          height: 100,
+          top: -100,
+        },
+      button: {
+          backgroundColor: 'black',
+          borderRadius: 100,
+          width: 65,
+          height: 65,
+          top: 70,
+      },
+      buttonText:{
+          fontSize: 50,
+          color:'white',
+          left:19,
+          top:-5
+      },
+      container: {
+          backgroundColor: '#F0EDE4',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        flex: 1,
+        justifyContent: 'center',
+        padding: 30,
+      },
+      pickedDateContainer: {
+        padding: 20,
+        backgroundColor: 'black',
+        borderRadius: 10,
+      },
+      pickedDate: {
+        fontSize: 18,
+        color: 'black',
+      },
+      btnContainer: {
+        padding: 30,
+        width:380,
+        borderRadius: 100,
+        top:20
+      },
+    
+      datePicker: {
+        width: 320,
+        height: 260,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'flex-start',
+      },
+      input: {
+          width: 370,
+          height: 50,
+          left: 15,
+          top: 1,
+          paddingBottom: 5,
+          borderBottomWidth: 0.5,
+          borderBottomColor: 'black',
+        },
+        spinnerTextStyle: {
           color: 'black',
         },
-        btnContainer: {
-          padding: 30,
-          width:400,
-          borderRadius: 100,
-          top:20
-        },
-      
-        datePicker: {
-          width: 320,
-          height: 260,
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'flex-start',
-        },
-        input: {
-            width: 370,
-            height: 50,
-            left: 15,
-            top: 1,
-            paddingBottom: 5,
-            borderBottomWidth: 0.5,
-            borderBottomColor: '#A47E53',
-          },
-          spinnerTextStyle: {
-            color: '#FFF',
-          },
-      });
+    });
+   

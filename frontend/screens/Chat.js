@@ -181,7 +181,7 @@ function Chat() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F0EDE4',
+    backgroundColor: 'black',
   },
   headerContainer: {
     flexDirection: 'row',
@@ -195,13 +195,16 @@ const styles = StyleSheet.create({
     height: 40,
     borderRadius: 20,
     marginRight: 10,
+    borderRadius: 15,
+    borderWidth: 2,
+    borderColor: '#7492e2',
   },
   headerText: {
     fontSize: 18,
     fontWeight: 'bold',
   },
   headerStyle: {
-    backgroundColor: '#F0EDE4',
+    backgroundColor: 'white',
   },
   chatContainer: {
     paddingVertical: 10,
@@ -223,11 +226,11 @@ const styles = StyleSheet.create({
   },
   textLeft: {
     alignSelf: 'flex-start',
-    backgroundColor: '#d6c898',
+    backgroundColor: '#7492e2',
   },
   textRight: {
     alignSelf: 'flex-end',
-    backgroundColor: '#a47e53',
+    backgroundColor: '#353e73',
   },
   inputContainer: {
     paddingHorizontal: 20,

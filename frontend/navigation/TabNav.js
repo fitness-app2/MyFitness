@@ -31,7 +31,7 @@ const screenOptions = {
     right: 0,
     left: 0,
     elevation: 0,
-    backgroundColor: 'rgba(240, 237, 228, 0.2)',
+    backgroundColor: 'black',
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
   }
@@ -55,7 +55,7 @@ const Tabs = () => {
             shadowOpacity: 0,
           },
           tabBarIcon: ({ focused }) => (
-            <Feather name='home' size={24} color={focused ? COLORS.primary : COLORS.brown} />
+            <Feather name='home' size={24} color={focused ? COLORS.white : COLORS.white} />
           ),
         }}
       />
@@ -70,7 +70,7 @@ const Tabs = () => {
             shadowOpacity: 0,
           },
           tabBarIcon: ({ focused }) => (
-            <Ionicons name='chatbox-outline' size={24} color={focused ? COLORS.primary : COLORS.brown} />
+            <Ionicons name='chatbox-outline' size={24} color={focused ? COLORS.primary : COLORS.white} />
           ),
         }}
       />
@@ -85,7 +85,7 @@ const Tabs = () => {
             shadowOpacity: 0,
           },
           tabBarIcon: ({ focused }) => (
-            <LinearGradient colors={['#A47E53', '#c5af81']}
+            <LinearGradient colors={['black', 'white', '#7492e2']}
               style={{
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -93,11 +93,11 @@ const Tabs = () => {
                 height: 50,
                 top: -10,
                 borderRadius: 15,
-                borderColor: "rgba(240, 237, 228, 0.5)",
+                borderColor: "#7492e2",
                 borderWidth: 4
               }}
             >
-              <Feather name="plus" size={45} color="rgba(240, 237, 228, 0.9)"/>
+              <Feather name="plus" size={45} color={['white', 'white']}/>
             </LinearGradient>
           ),
         }}
@@ -113,7 +113,7 @@ const Tabs = () => {
             shadowOpacity: 0,
           },
           tabBarIcon: ({ focused }) => (
-            <FontAwesome5 name='search' size={24} color={focused ? COLORS.primary : COLORS.brown} />
+            <FontAwesome5 name='search' size={24} color={focused ? COLORS.white : COLORS.white} />
           ),
         }}
       />
@@ -130,7 +130,7 @@ const Tabs = () => {
           tabBarIcon: ({ focused }) => (
             <Image
               source={{ uri: user.profilepic }}
-              style={{ width: 27, height: 27, borderRadius: 50 }}
+              style={{ width: 40, height: 27, borderRadius: 50 , borderColor : 'white' }}
             />
           ),
         }}

@@ -77,36 +77,56 @@ export default function SignUp() {
           textStyle={styles.spinnerTextStyle}
         />
 
-      <ButtonGroup
+
+
+      {/* <ButtonGroup
         buttons={['LOG IN', 'SIGN UP']}
         selectedIndex={1}
         onPress={() => navigation.navigate('login')}
         containerStyle={styles.buttonGroupContainer}
         selectedButtonStyle={styles.selectedButton} 
-      />
-      <TextInput style={styles.input} onChangeText={setName} placeholder="First name" keyboardType="email-address" />
-      <TextInput style={styles.input} onChangeText={setLastname} placeholder="Last name" keyboardType="email-address" />
-      <TextInput style={styles.input} onChangeText={setEmail} placeholder="email-address" keyboardType="email-address" />
-      <TextInput style={styles.input} onChangeText={setPass} placeholder="password" keyboardType="default" secureTextEntry={true} />
+      /> */}
+     <Text style={styles.Text}>SIGN UP</Text>
+      <TextInput style={styles.input4} onChangeText={setName} placeholder="First name" keyboardType="email-address" />
+      <TextInput style={styles.input3} onChangeText={setLastname} placeholder="Last name" keyboardType="email-address" />
+      <TextInput style={styles.input2} onChangeText={setEmail} placeholder="email-address" keyboardType="email-address" />
+      <TextInput style={styles.input1} onChangeText={setPass} placeholder="password" keyboardType="default" secureTextEntry={true} />
       
 
       <TouchableOpacity style={styles.button} onPress={handleSignUp}>
         <Text style={styles.buttonText}>SIGN UP</Text>
       </TouchableOpacity>
+
+      <Text style={styles.loginText}>
+        If you have an account,{' '}
+        <TouchableOpacity onPress={() => navigation.navigate('login')}>
+          <Text style={styles.loginLink}>log in</Text>
+        </TouchableOpacity>
+      </Text>
       
       <TouchableOpacity style={styles.button2} onPress={() => Alert.alert('Login pressed')}>
-        <Text style={styles.buttonText2}>SIGN UP WITH GOOGLE</Text>
+        {/* <Text style={styles.buttonText2}>SIGN UP WITH GOOGLE</Text> */}
       </TouchableOpacity>
 
-      <Image
+      {/* <Image
         source={require('../../assets/qq.png')}
         fadeDuration={0}
         style={styles.logo}
-      />
+      /> */}
       <Image
         source={require('../../assets/Google__G__Logo.png.webp')}
         fadeDuration={0}
         style={styles.googleLogo}
+      />
+        <Image
+        source={require('../../assets/book.jpg')}
+        fadeDuration={0}
+        style={styles.facebook}
+      />
+       <Image
+        source={require('../../assets/39386d212ac9a4626cd4f3fb25466503.jpg')}
+        fadeDuration={0}
+        style={styles.instagram}
       />
       <Text style={styles.footer}>© fitnessy 2023</Text>
     </View>
@@ -120,6 +140,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  
   buttonGroupContainer: {
     marginBottom: 20,
     marginTop: 100,
@@ -129,28 +150,28 @@ const styles = StyleSheet.create({
     backgroundColor: '#B4966A',
   },
   button: {
-    backgroundColor: '#B4966A',
+    backgroundColor: 'black',
     padding: 10,
-    borderRadius: 55,
-    marginTop: 50,
-    width: 327,
+    borderRadius:10,
+    marginTop: 70,
+    width: 207,
     height: 55,
-    top: 150,
+    top: 50,
   },
-  button2: {
-    backgroundColor: '#B4966A',
-    padding: 10,
-    borderRadius: 55,
-    marginTop: 50,
-    width: 327,
-    height: 55,
-    top: 110,
-  },
+
   buttonText: {
     fontSize: 16,
-    color: '#FFFFFF',
-    left: 125,
+    color: 'white',
+    left: 55,
+    top: 8,
+
+  },
+  Text: {
+    fontSize: 40,
+    color: 'black',
+    left: 1, 
     top: 5,
+
   },
   buttonText2: {
     fontSize: 16,
@@ -158,14 +179,54 @@ const styles = StyleSheet.create({
     left: 70,
     top: 5,
   },
-  input: {
-    width: 370,
+  input1: {
+    width: '80%',
     height: 50,
-    left: 15,
-    top: 150,
+    left: 2,
+    top: 80,
     paddingBottom: 5,
-    borderBottomWidth: 0.5,
-    borderBottomColor: '#A47E53',
+    borderBottomWidth: 1,
+    borderBottomColor: 'black',
+    padding: 15,
+    margin: 10,
+    borderRadius: 10,
+  },
+  input2: {
+    width: '80%',
+    height: 50,
+    left: 2,
+    top: 80,
+    paddingBottom: 5,
+    borderBottomWidth: 1,
+    borderBottomColor: 'black',
+    padding: 15,
+    margin: 10,
+    borderRadius: 10,
+    
+  },
+  input3: {
+    width: '80%',
+    height: 50,
+    left: 2,
+    top: 80,
+    paddingBottom: 5,
+    borderBottomWidth: 1,
+    borderBottomColor: 'black',
+    padding: 15,
+    margin: 10,
+    borderRadius: 10,
+  },
+  input4: {
+    width: '80%',
+    height: 50,
+    left: 2,
+    top: 80,
+    paddingBottom: 5,
+    borderBottomWidth: 1,
+    borderBottomColor: 'black',
+    padding: 15,
+    margin: 10,
+    borderRadius: 10,
   },
   checkboxContainer: {
     flexDirection: 'row',
@@ -194,18 +255,46 @@ const styles = StyleSheet.create({
     top: -500,
   },
   googleLogo: {
-    width: 20,
+    width: 22,
     height: 20,
-    top: -25,
-    left: -130,
+    top: 77,
+    left: -30,
   },
   footer: {
     
     fontSize: 10,
-    color: '#A47E53',
-    top: 10,
+    color: 'black',
+    top: 80,
   },
   spinnerTextStyle: {
     color: '#FFF',
   },
+  instagram:{
+    width: 25,
+    height: 25,
+    top: 15,
+    left: 1,
+  },
+  facebook:{
+    width: 25,
+    height: 39,
+    top: 49,
+    left: 30,
+  },
+  loginLink: {
+    color: 'black',
+    textDecorationLine: 'underline', 
+    fontSize: 16,
+    left: 1, 
+    top: 5,
+  },
+  loginText: {
+    fontSize: 10,
+    color: 'black',
+    left: 1, 
+    top: 60,
+
+  }
+  ,
+
 });

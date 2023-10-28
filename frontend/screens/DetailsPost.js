@@ -226,16 +226,22 @@ console.log(currentUser);
 }
 
         <View style={styles.likecom}>
+     
+
           <TouchableOpacity style={styles.like} onPress={handleLike}>
             <Icon
               name={isLiked ? "heart" : "heart-outline"}
               size={30}
-              color={isLiked ? "#A47E53" : "#A47E53"}
+              color={isLiked ? "red" : "white"}
             />
+               <TouchableOpacity style={styles.share} onPress={handleLike}>
+       
+       <Icon name="share" size={30} color="white" />
+       </TouchableOpacity>
             <Text style={styles.desc}>{likes}</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.com} onPress={handleComment}>
-            <Icon name="chatbox-outline" size={30} color="#A47E53" />
+            <Icon name="chatbox-outline" size={30} color="white" />
             <Text style={styles.desc}>{comments}</Text>
           </TouchableOpacity>
         </View>
@@ -283,60 +289,71 @@ console.log(currentUser);
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
-    marginVertical: "2%",
+    backgroundColor: "black", 
+    marginVertical: 10, 
     width: "95%",
     alignSelf: "center",
-    borderRadius: 20,
-    backgroundColor: "rgba(240, 237, 228, 0.5)",
+    borderRadius: 1, 
   },
   post: {
-    marginBottom: 10,
-    
+    marginBottom: 1, 
   },
   image: {
-    width: "100%",
-    height: 400,
-    borderRadius: 20,
-    overflow: "hidden",
+    width: "100%", 
+    height: 350, 
+    borderRadius: 5,
+    borderWidth: 0.6,
+    borderColor: '#7492e2',
+    shadowColor: "white",
+    shadowOffset: {
+        width: 10,
+        height: 10, 
+    },
+    shadowOpacity: 0.7,
+    shadowRadius: 6, 
+    elevation: 6,
   },
   postHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: 10,
-    backgroundColor: "rgba(240, 237, 228, 0.2)",
+    padding: 3,
+    backgroundColor: "black",
   },
   user: {
     flexDirection: "row",
     alignItems: "center",
   },
   name: {
-    color: "#fff",
+    color: "white", 
     fontWeight: "bold",
-    marginLeft: 10,
-    right:70
+    marginLeft: -5, 
   },
   date: {
-    color: "#fff",
-    marginLeft: 10,
-left:70
+    color: "white", 
+    marginLeft: 100,
   },
   postFooter: {
     position: "absolute",
     bottom: 0,
-    backgroundColor: "rgba(240, 237, 228, 0.2)",
-    padding: 10,
+    backgroundColor: "black",
+    padding: 3, 
     width: "100%",
   },
   desc: {
     color: "white",
+    fontSize: 16, 
+    lineHeight: 17,
+    marginTop: 5,
+    paddingHorizontal: 15, 
+
+    left : 2,
   },
   likecom: {
     flexDirection: "row",
-    justifyContent: "space-around",
-    padding: 10,
-    backgroundColor: "rgba(240, 237, 228, 0.5)",
+    justifyContent: "space-between",
+    padding: 5, 
+    backgroundColor: "black",
   },
   like: {
     flexDirection: "row",
@@ -345,24 +362,22 @@ left:70
   com: {
     flexDirection: "row",
     alignItems: "center",
+    left : -125 ,
   },
   likedByContainer: {
-    marginTop: 0,
+    marginTop: 10, 
     flexDirection: "row",
     alignItems: "center",
-    // backgroundColor: "rgba(240, 237, 228, 0.5)",
-
   },
   likedByText: {
     marginRight: 5,
     fontSize: 12,
     color: "white",
     left:20
-    
   },
   likedByUsername: {
     fontSize: 12,
-    color: "#A47E53",
+    color: "white",
     fontWeight: "bold",
     marginRight: 5,
   },
@@ -370,21 +385,21 @@ left:70
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    marginTop: 22,
+    marginTop: 10,
   },
   modalView: {
     margin: 20,
-    backgroundColor: "white",
-    borderRadius: 20,
-    padding: 35,
+    backgroundColor: "#F0EDE4",
+    borderRadius: 15,
+    padding: 25, 
     alignItems: "center",
-    shadowColor: "#000",
+    shadowColor: "#df208e",
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: 4,
     },
-    shadowOpacity: 0.25,
-    shadowRadius: 4,
+    shadowOpacity: 0.3,
+    shadowRadius: 5, 
     elevation: 5,
   },
   textStyle: {
@@ -393,22 +408,31 @@ left:70
     textAlign: "center",
     backgroundColor: "#B4966A",
     borderRadius: 20,
-    padding: 10,
+    padding: 10, 
   },
   profileImage: {
-    width: 30,
-    height: 30,
-    borderRadius: 15,
+    width: 40, 
+    height: 40, 
+    borderRadius: 70,
+    borderWidth: 2,
+    borderColor: '#7492e2',
   },
-  imageText:{
-    top:70,
-    left:0,
-    color:'#d4af37',
-    fontSize:40
+  imageText: {
+    top: 70, 
+    left: 0,
+    color: '#d4af37',
+    fontSize: 32,
   },
   imageTextContainer: {
     position: 'absolute',
-    top: 100,
-    left: 100,
+    top: 80, 
+    left: 80, 
   },
+  share : {
+    fontSize: 12,
+    color: "white",
+    fontWeight: "bold",
+    marginRight: 20,
+    left : 260,
+  }
 });

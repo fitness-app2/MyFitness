@@ -8,9 +8,12 @@ const DeleteButton = ({active, style}) => {
     <View
       style={[
         {
-          backgroundColor: colors.white,
-          padding: 4,
-          borderRadius: 20,
+          backgroundColor: colors.blue,
+          padding: 1,
+          borderRadius: 2,
+        
+          top: -1,
+          left : -1
         },
         shadow.light,
         style,
