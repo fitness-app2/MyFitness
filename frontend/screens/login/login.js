@@ -1,6 +1,6 @@
 import React,{useState} from 'react';
 import {  useNavigation } from '@react-navigation/native';
-import { StyleSheet, Text, View, Image, TouchableOpacity, Alert, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Alert, TextInput, ScrollView } from 'react-native';
 import { CheckBox } from 'react-native-elements';
 import { SocialIcon } from 'react-native-elements'
 import { ButtonGroup } from '@rneui/themed'
@@ -78,6 +78,7 @@ axios.get(`${link}/users/login/${id}`)
 
 
   return (
+    <ScrollView>
     <View style={styles.container}>
       <Spinner
       
@@ -87,20 +88,20 @@ axios.get(`${link}/users/login/${id}`)
     
       textStyle={styles.spinnerTextStyle}
     />
-      <ButtonGroup
+      {/* <ButtonGroup
         buttons={['LOG IN', 'SIGN UP']}
         selectedIndex={0}
         onPress={() => navigation.navigate('Signup')}
         containerStyle={styles.buttonGroupContainer}
         selectedButtonStyle={styles.selectedButton} // Set the selected button color
-      />
-      <TextInput style={styles.input} onChangeText={setEmail} placeholder="email-address" keyboardType="email-address" />
-      <TextInput style={styles.input} onChangeText={setPass} placeholder="password" keyboardType="default" secureTextEntry={true} />
+      /> */}
+      <TextInput style={styles.input1} onChangeText={setEmail} placeholder="email-address" keyboardType="email-address" />
+      <TextInput style={styles.input2} onChangeText={setPass} placeholder="password" keyboardType="default" secureTextEntry={true} />
       <TouchableOpacity style={styles.checkboxContainer} onPress={toggleCheckbox}>
         <CheckBox
           checked={isSelected}
           onPress={toggleCheckbox}
-          checkedColor="#A47E53"
+          checkedColor="black"
           containerStyle={styles.checkbox}
         />
         <Text style={styles.checkboxText}>Remember me</Text>
@@ -110,118 +111,129 @@ axios.get(`${link}/users/login/${id}`)
         <Text style={styles.buttonText}>SIGN IN</Text>
       </TouchableOpacity>
       <Text style={styles.forgotPassword} onPress={resetPassword} >Forgot password?</Text>
-      <TouchableOpacity style={styles.button2} onPress={() => Alert.alert('Login pressed')}>
+      {/* <TouchableOpacity style={styles.button2} onPress={() => Alert.alert('Login pressed')}>
         <Text style={styles.buttonText2}>SIGN IN WITH GOOGLE</Text>
-      </TouchableOpacity>
-
+      </TouchableOpacity> */}
+{/* 
       <Image
         source={require('../../assets/qq.png')}
         fadeDuration={0}
         style={styles.logo}
-      />
-      <Image
-        source={require('../../assets/Google__G__Logo.png.webp')}
-        fadeDuration={0}
-        style={styles.googleLogo}
-      />
-      <Text style={styles.footer}>© Valeria 2023</Text>
+      /> */}
+ 
+      <Text style={styles.footer}>© Fitnessy 2023</Text>
     </View>
+    </ScrollView>
   );
 }
 
+
+
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#F0EDE4',
+    display: 'flex',
+    flexDirection: 'column',
     alignItems: 'center',
+    flex: 1,
     justifyContent: 'center',
+    padding: 30,
   },
-  buttonGroupContainer: {
-    marginBottom: 20,
-    marginTop: 100,
-    top:100
+  input1: {
+    width: '80%',
+    height: 50,
+    left: 2,
+    top: 50,
+    paddingBottom: 5,
+    borderBottomWidth: 1,
+    borderBottomColor: 'black',
+    padding: 15,
+    margin: 10,
+    borderRadius: 10,
   },
-  selectedButton: {
-    backgroundColor: '#B4966A', // Set the selected button color
+  input2: {
+    width: '80%',
+    height: 50,
+    left: 2,
+    top: 30,
+    paddingBottom: 5,
+    borderBottomWidth: 1,
+    borderBottomColor: 'black',
+    padding: 15,
+    margin: 10,
+    borderRadius: 10,
   },
   button: {
-    backgroundColor: '#B4966A',
+    backgroundColor: 'black',
     padding: 10,
-    borderRadius: 55,
-    marginTop: 50,
-    width: 327,
+    borderRadius:10,
+    marginTop: 70,
+    width: 177,
     height: 55,
-    top: 150,
-  },
-  button2: {
-    backgroundColor: '#B4966A',
-    padding: 10,
-    borderRadius: 55,
-    marginTop: 50,
-    width: 327,
-    height: 55,
-    top: 200,
+    top:2,
   },
   buttonText: {
+    color: 'white',
     fontSize: 16,
-    color: '#FFFFFF',
-    left: 125,
-    top: 5,
+    left: 46,
+    top : 5
+  },
+  button2: {
+    width: '80%',
+    padding: 15,
+    margin: 10,
+    borderRadius: 20,
+    backgroundColor: 'black',
+    alignItems: 'center',
   },
   buttonText2: {
-    fontSize: 16,
-    color: '#FFFFFF',
-    left: 70,
-    top: 5,
+    color: 'white',
+    fontSize: 18,
+  
   },
-  input: {
-    width: 370,
-    height: 50,
-    left: 15,
-    top: 150,
-    paddingBottom: 5,
-    borderBottomWidth: 0.5,
-    borderBottomColor: '#A47E53',
+  buttonGroupContainer: {
+    width: '80%',
+  },
+  selectedButton: {
+    backgroundColor: 'black',
   },
   checkboxContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: 10,
-    top: 170,
-    right: 100,
+    width: '80%',
   },
   checkbox: {
     backgroundColor: 'transparent',
     borderWidth: 0,
     padding: 0,
-    marginLeft: 0,
-    marginRight: 0,
+    top : 60
   },
   checkboxText: {
-    marginLeft: 8,
+    fontSize: 16,
+    marginLeft: -7,
+    top : 58
   },
   forgotPassword: {
-    top: 180,
-    fontSize: 11,
+    fontSize: 16,
+    color: 'black',
+    margin: 10,
   },
   logo: {
-    width: 160,
+    width: 60,
     height: 100,
-    top: -500,
+    marginBottom: 20,
   },
   googleLogo: {
-    width: 20,
-    height: 20,
-    top: 62,
-    left: -130,
+    width: 50,
+    height: 50,
+    
   },
   footer: {
-    
-    fontSize: 10,
-    color: '#A47E53',
-    top: 150,
+    position: 'relative',
+    bottom: 10,
   },
   spinnerTextStyle: {
-    color: '#FFF',
+    color: 'grey',
   },
 });
+

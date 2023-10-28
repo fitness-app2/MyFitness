@@ -51,12 +51,14 @@ export default function Home({ route }) {
         <SafeAreaView style={styles.safeArea}>
           <StatusBar barStyle="dark-content" />
           <View style={styles.header}>
-            <Text style={styles.title}>Welcome, {currentUserData.username} </Text>
+          <Text style={[styles.title, { fontStyle: 'italic', color: 'white' }]}>
+ Good morning, {currentUserData.username}
+</Text>
             <TouchableOpacity style={styles.notificationIcon}>
-              <Icon name="notifications" size={30} color="#A47E53" />
+              <Icon name="notifications" size={20} color= 'white' />
             </TouchableOpacity>
           </View>
-          <Text style={styles.feed}>Feed</Text>
+          {/* <Text style={styles.feed}>MyFitness</Text> */}
           <FlatList
             data={data}
             renderItem={renderItem}
@@ -71,21 +73,23 @@ export default function Home({ route }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor : "black"
 
   },
+  
   safeArea: {
-    flex: 1, 
+    flex: 6, 
     top:60
   },
   bottomBar: {
     height: 60, 
-    backgroundColor: 'transparent', 
+    backgroundColor: 'black', 
   },
   header: {
-    height: 50,
+    height: 40,
     alignItems: 'flex-start', 
     justifyContent: 'center',
-    borderBottomColor: '#ddd',
+    borderBottomColor: 'black',
     borderBottomWidth: 1,
     flexDirection: 'row',
     padding: 10, 
@@ -93,14 +97,14 @@ const styles = StyleSheet.create({
 
   },
   title: {
-    color: '#A47E53',
+    // color: 'white',
     fontSize: 20,
     fontWeight: 'bold',
-    lineHeight: 24,
+    lineHeight: 19,
     marginRight: 'auto',
   },
   feed: {
-    color: '#A47E53',
+    color: '#7492e2',
     fontSize: 20,
     fontWeight: 'bold',
     lineHeight: 24,
@@ -113,7 +117,8 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    borderRadius: 0,
+    borderRadius: 2,
     overflow: 'hidden',
+    borderColor : 'white'
   },
 });

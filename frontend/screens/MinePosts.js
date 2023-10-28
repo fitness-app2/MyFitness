@@ -288,7 +288,9 @@ console.log(item,"iteemmm");
 
 
   return (
+
     <ImageBackground source={{ uri:item.pic[currentImageIndex] }} resizeMode="cover" style={styles.backgroundImage} blurRadius={70} >
+      
     <View style={styles.container}>
       <Image source={{ uri: item.pic[currentImageIndex] }} style={styles.image} resizeMode="cover" />
     <TouchableOpacity style={styles.favoritee} onPress={handleDelete}>
@@ -333,7 +335,7 @@ console.log(item,"iteemmm");
         <Icon
           name="heart"
           size={30}
-          color={likes.length > 0 ? "#A47E53" : "#A47E53"}
+          color={likes.length > 0 ? "white" : "red"}
         />
         {likedBy !== "" && (
           <Text style={styles.likedByText}>Liked By: {likedBy}</Text>
@@ -376,7 +378,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: "100%",
-    height: "50%",
+    height: "60%",
   },
   postHeader: {
     flexDirection: "row",
@@ -387,9 +389,10 @@ const styles = StyleSheet.create({
   name: {
     fontWeight: "bold",
     fontSize: 20,
+    // color : "white"
   },
   date: {
-    color: 'rgba(240, 237, 228, 0.8)',
+    color: 'white',
   },
   postFooter: {
     paddingHorizontal: 15,
@@ -398,7 +401,7 @@ const styles = StyleSheet.create({
   desc: {
     marginTop: 10,
     lineHeight: 20,
-    color: 'rgba(240, 237, 228, 0.8)',
+    color: 'white',
   },
   userContainer: {
     flexDirection: "row",
@@ -408,14 +411,14 @@ const styles = StyleSheet.create({
   },
   userName: {
     fontSize: 15,
-    color: "#B4966A",
+    color: "white",
     marginLeft: 5,
   },
   singleCommentContainer: {
-    backgroundColor: "rgba(240, 237, 228, 0.8)",
+    backgroundColor: "white",
     padding: 10,
     borderRadius: 8,
-    shadowColor: "#000",
+    shadowColor: "#7492e2",
     shadowOffset: {
       width: 0,
       height: 2,
@@ -440,10 +443,10 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     paddingLeft: 10,
-    color: 'rgba(240, 237, 228, 0.8)'
+    color: '#7492e'
   },
   commentButton: {
-    backgroundColor: "#B4966A",
+    backgroundColor: "white",
     justifyContent: "center",
     alignItems: "center",
     padding: 10,
@@ -460,7 +463,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   nextButton: {
-    backgroundColor: "#B4966A",
+    backgroundColor: "#7492e2",
     justifyContent: "center",
     alignItems: "center",
     padding: 10,
@@ -482,7 +485,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 35,
     alignItems: "center",
-    shadowColor: "#000",
+    shadowColor: "black",
     shadowOffset: {
       width: 0,
       height: 2,
@@ -493,25 +496,25 @@ const styles = StyleSheet.create({
   },
   likedByText: {
     fontSize: 12,
-    color: "#A47E53",
+    color: "white",
     fontWeight: "bold",
     marginRight: 5,
   },
   likedByUsername: {
     fontSize: 12,
-    color: "#A47E53",
+    color: "white",
     fontWeight: "bold",
     marginRight: 5,
   },
   closeModalButton: {
     height: 30,
-    backgroundColor: "#B4966A",
+    backgroundColor: "#7492e",
     borderRadius: 50,
     // padding: 10,
     width:30
   },
   closeModalButtonText: {
-    color: "white",
+    color: "#7492e",
     fontWeight: "bold",
     textAlign: "center",
     top:5

@@ -63,13 +63,17 @@ useEffect(()=>{
 
        <TouchableOpacity
   style={{
-    backgroundColor: 'rgba(240, 237, 228, 0.5)', // Transparent background color
+    backgroundColor: '#7492e2', // Transparent background color
     paddingHorizontal: 12,
     paddingVertical: 6,
     borderRadius: 4,
+    width: '80%',
     alignItems: 'center',
     justifyContent: 'center',
-  marginBottom:20
+  marginBottom:20,
+  top: -20,
+  left : 20
+  
   }}
   onPress={payementIntent}
 >

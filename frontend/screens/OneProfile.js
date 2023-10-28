@@ -139,7 +139,7 @@ catch(err){
    }
 
   return (
-    <ImageBackground source={{ uri: profilepic }} resizeMode="cover" style={styles.backgroundImage} blurRadius={70} >
+    // <ImageBackground source={{ uri: profilepic }} resizeMode="cover" style={styles.backgroundImage} blurRadius={70} >
     <View style={styles.container}>
       <View style={styles.profileContainer}>
         <View style={styles.profileImageContainer}>
@@ -194,37 +194,33 @@ catch(err){
         />
       </View>
     </View>
-    </ImageBackground>
+    
   );
 }
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get("window").height;
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'transparent',
-  },
-  backgroundImage: {
-    flex: 1,
+    backgroundColor: 'black',
   },
   profileContainer: {
     padding: 16,
   },
-  headerStyle: {
-    backgroundColor: 'transparent',
-  },
   profileImageContainer: {
-    width: 100,
-    height: 100,
-    borderRadius: 50,
-    borderWidth: 3,
-    borderColor: '#fff',
+    width: 140,
+    height: 140,
+    borderRadius: 70,
+    borderWidth: 4,
+    borderColor: '#7492e2',
     overflow: 'hidden',
     alignSelf: 'center',
-    marginBottom: 11,
-    marginTop: 51,
+    marginBottom: 16,
+    marginTop: 30,
+    left : -80,
   },
   profileImage: {
     flex: 1,
@@ -232,94 +228,87 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   username: {
-    fontSize: 16,
+    fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
-    marginBottom: 16,
+    marginBottom: 10,
+    color : 'white',
+    left : 50,
+    top : -115,
   },
-  infoContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    marginBottom: 16,
+ 
+    infoContainer: {
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+      marginBottom: 10,
   },
   infoItem: {
     alignItems: 'center',
-    left:10
   },
   infoText: {
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: 'bold',
     marginTop: 4,
-    
+    // color : "white ,",
   },
   infoLabel: {
-    fontSize: 12,
-    color: 'rgba(240, 237, 228, 0.5)',
+    fontSize: 14,
+    color: 'white',
   },
   buttonContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 16,
-  },
-  button: {
-    backgroundColor: 'rgba(240, 237, 228, 0.5)', // Transparent background color
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-    borderRadius: 4,
-    alignItems: 'center',
     justifyContent: 'center',
-    top: -200,
-    left: 330,
+    marginBottom: 20,
   },
-  
-  editProfileButton: {
-    backgroundColor: '#fff',
-    borderWidth: 1,
-    borderColor: '#3897f0',
+  buttonFollow: {
+    backgroundColor: '#7492e2',
+    borderRadius: 4,
+    paddingHorizontal: 8,
+    paddingVertical: 6,
+    height: 40,
+    width: 180,
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 10,
   },
   buttonText: {
-    color: '#fff',
-    fontSize: 14,
+    color: 'white',
+    fontSize: 16,
     fontWeight: 'bold',
   },
   postContainer: {
     alignItems: 'center',
-    marginTop: 8,
-    paddingBottom: 24,
+    marginTop: 10,
+    paddingBottom: 10,
   },
   postImage: {
     width: 180,
     height: 180,
     resizeMode: 'cover',
-    margin: 1,
-    borderRadius:15,
+    margin: 5,
+    borderRadius: 15,
     borderWidth: 2,
-    borderColor:'rgba(240, 237, 228, 0.5)',
-  },
-  buttonFollow: {
-    backgroundColor: 'rgba(240, 237, 228, 0.5)',
-    borderRadius: 5,
-    height: 45,
-    width: 200,
-    justifyContent: 'center',
-    alignItems: 'center',
-    margin: 10,
-    left: 85,
+    borderColor: '#d4af37',
   },
   followedButton: {
-    backgroundColor: 'rgba(240, 237, 228, 0.5)',
+    backgroundColor: 'white',
+    borderWidth: 2,
+    borderColor: '#d4af37',
   },
   unfollowedButton: {
-    backgroundColor: 'rgba(240, 237, 228, 0.5)',
+    backgroundColor: 'rgba(212, 175, 55, 0.5)',
   },
-  premium:{
-    borderColor:"gold"
+  imageText: {
+    top: -90,
+    left: 60,
+    color: '#d4af37',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
-  imageText:{
-    top:-100,
-    left:60,
-    color:'#d4af37'
-  }
 });
+
+  
+
+  
 
 export default OneProfile;

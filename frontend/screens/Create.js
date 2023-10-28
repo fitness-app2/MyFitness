@@ -94,18 +94,14 @@ export default function CreatePost({ route }) {
   };
 
   return (
-    <ImageBackground
-    source={require('../assets/HD-wallpaper-iphoney-929-apple-blur-color-cool-iphone-live-new.jpg')}
-    style={styles.backgroundImage}
-    blurRadius={40}
-  >
+   
     <View style={styles.container}>
       <Spinner
         visible={isLoading}
         textContent={"Loading..."}
         textStyle={styles.spinnerTextStyle}
       />
-      <Image source={require("../assets/HD-wallpaper-iphoney-929-apple-blur-color-cool-iphone-live-new.jpg")} style={styles.logo} />
+      {/* <Image source={require("../assets/HD-wallpaper-iphoney-929-apple-blur-color-cool-iphone-live-new.jpg")} style={styles.logo} /> */}
       <TextInput
         placeholder='Description'
         value={description}
@@ -122,7 +118,7 @@ export default function CreatePost({ route }) {
         <CheckBox
           checked={isSelected}
           onPress={toggleCheckbox}
-          checkedColor="#A47E53"
+          checkedColor="gold"
           containerStyle={styles.checkbox}
         />
         <Text style={styles.checkboxText}>Premium</Text>
@@ -135,16 +131,19 @@ export default function CreatePost({ route }) {
         <Text style={styles.buttonText}>Post</Text>
       </TouchableOpacity>
     </View>
-    </ImageBackground>
+  
   );
 }
 
+
+
 const styles = StyleSheet.create({
   container: {
+    backgroundColor : "black",
     flex: 1,
     alignItems: "center",
     justifyContent: "flex-start",
-    paddingTop: 50, 
+    paddingTop: 150,
   },
   logo: {
     width: 200,
@@ -154,17 +153,20 @@ const styles = StyleSheet.create({
   content: {
     alignItems: "center",
     justifyContent: "center",
-    marginTop: 70, // Add margin at the top to separate logo and content
+    marginTop: 70,
   },
   input: {
-    width: 270,
-    height: 50,
-    borderBottomWidth: 0.5,
-    borderBottomColor: "rgba(240, 237, 228, 0.5)",
-    textAlign: "center",
-    margin: 5,
-    marginBottom: 10,
-    color:"rgba(240, 237, 228, 0.5)"
+    width: 370,
+          height: 50,
+          left: 15,
+          top: 130,
+          paddingBottom: 5,
+          borderBottomWidth: 0.5,
+          borderBottomColor: '#7492e2',
+          color : 'white',
+        },
+        spinnerTextStyle: {
+          color : "white",
   },
   photo: {
     width: 70,
@@ -173,55 +175,63 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   button: {
-    backgroundColor: 'rgba(240, 237, 228, 0.5)',
-    borderRadius: 100,
+    backgroundColor: "#7492e2",
+    borderRadius: 10,
     width: 65,
     height: 65,
     marginTop: 130,
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 10,
+    marginBottom: 200,
   },
   buttonText2: {
     bottom: 5,
     fontSize: 50,
     color: "#F0EDE4",
+    
+    
   },
   button2: {
-    backgroundColor:'rgba(240, 237, 228, 0.5)',
+    backgroundColor: '#7492e2',
     padding: 10,
-    borderRadius: 55,
-    width: 100,
-    alignItems: "center",
-    marginBottom: 100,
+    borderRadius: 10,
+    marginTop: 50,
+    width: 150,
+    height: 55,
+    top: -210,
   },
   buttonText: {
     fontSize: 16,
     color: "#FFFFFF",
     fontWeight: "bold",
+    left : 45,
+
   },
   spinnerTextStyle: {
-    color: "#FFF",
+    color: "#7492e2",
   },
   checkboxContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
+    flexDirection: "row",
+    alignItems: "center",
     marginTop: 10,
     top: 0,
-    // right: 10,
   },
   checkbox: {
-    backgroundColor: 'transparent',
+    backgroundColor: "transparent",
     borderWidth: 0,
     padding: 0,
     marginLeft: 0,
     marginRight: 0,
+    borderColor : '#7492e2'
   },
   checkboxText: {
     marginLeft: 8,
+    color : "white",
   },
   backgroundImage: {
     flex: 1,
-    resizeMode: 'cover', 
+    resizeMode: "cover",
   },
 });
+
+

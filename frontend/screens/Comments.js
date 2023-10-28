@@ -107,11 +107,12 @@ export default function Comments({ route }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F0EDE4",
+    backgroundColor: "black",
     alignItems: "center",
     justifyContent: "flex-start",
-  },
-  contentContainer: {
+    padding: 20,
+  },  contentContainer: {
+    backgroundColor: "black",
     flex: 1,
     width: "90%",
     marginHorizontal: 20,
@@ -126,15 +127,16 @@ const styles = StyleSheet.create({
   commentInput: {
     flex: 1,
     height: 40,
-    borderColor: "gray",
+    borderColor: "#7492e2",
     borderWidth: 1,
     borderRadius: 10,
     paddingLeft: 10,
     marginBottom: 10,
     marginRight: 20,
+    color : 'white',
   },
   commentButton: {
-    backgroundColor: "#B4966A",
+    backgroundColor: "#7492e2",
     justifyContent: "center",
     alignItems: "center",
     padding: 10,
@@ -144,14 +146,14 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   commentText: {
-    color: "#FFFFFF",
+    color: "white",
   },
   singleCommentContainer: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#7492e2",
     padding: 10,
     borderRadius: 8,
     margin: 0,
-    shadowColor: "#000",
+    shadowColor: "#7492e2",
     shadowOffset: {
       width: 0,
       height: 2,
@@ -165,11 +167,11 @@ const styles = StyleSheet.create({
   singleCommentText: {
     marginLeft: 15,
     fontSize: 15,
-    color: "#000",
+    color: "white",
   },
   userName: {
     fontSize: 15,
-    color: "#B4966A",
+    color: "white",
     marginLeft: 5,
   },
   userContainer: {

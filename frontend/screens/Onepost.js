@@ -102,7 +102,7 @@ export default function OnePost({ route }) {
 
 
   return (
-    <ImageBackground source={{ uri:data.pic[currentImageIndex] }} resizeMode="cover" style={styles.backgroundImage} blurRadius={70} >
+    // <ImageBackground source={{ uri:data.pic[currentImageIndex] }} resizeMode="cover" style={styles.backgroundImage} blurRadius={70} >
     <View style={styles.container}>
       <Image source={{ uri: data.pic[currentImageIndex] }} style={styles.image} resizeMode="cover" />
       <View style={styles.postHeader}>
@@ -189,12 +189,13 @@ export default function OnePost({ route }) {
 </Modal>
 
     </View>
-    </ImageBackground>
+   
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: "black",
     flex: 1,
     
 

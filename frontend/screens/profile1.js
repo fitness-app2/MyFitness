@@ -90,6 +90,7 @@ const Profile = ({ navigation,route }) => {
   return (
     <ImageBackground source={{ uri: user.profilepic }} resizeMode="cover" style={styles.backgroundImage} blurRadius={70} >
       <ScrollView style={styles.container}>
+        
         <View style={styles.profileContainer}>
           <View style={styles.profileImageContainer}>
             <Image source={{ uri: user.profilepic }} style={styles.profileImage} />
@@ -120,7 +121,7 @@ const Profile = ({ navigation,route }) => {
 
           <View style={styles.buttonContainer}>
             <TouchableOpacity onPress={onLogout} style={styles.button}>
-              <Feather name="menu" size={22} color="black" />
+              <Feather name="menu" size={22} color="white" />
             </TouchableOpacity>
           </View>
 
@@ -139,10 +140,12 @@ const Profile = ({ navigation,route }) => {
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get("window").height;
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'transparent',
+    backgroundColor : "black",
   },
   backgroundImage: {
     flex: 1,
@@ -151,15 +154,17 @@ const styles = StyleSheet.create({
     padding: 16,
   },
   profileImageContainer: {
-    width: 100,
-    height: 100,
+    flexDirection: 'row',
+    width: 140,
+    height: 140,
     borderRadius: 50,
-    borderWidth: 3,
-    borderColor: '#fff',
+    borderWidth: 4,
+    borderColor: '#7492e2',
     overflow: 'hidden',
     alignSelf: 'center',
-    marginBottom: 11,
-    marginTop: 51,
+    marginBottom: 16,
+    marginTop: 30,
+    left : -80,
   },
   profileImage: {
     flex: 1,
@@ -167,76 +172,85 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   username: {
-    fontSize: 16,
+    fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
-    marginBottom: 16,
+    marginBottom: 10,
+    color : 'white',
+    left : 50,
+    top : -115,
   },
   infoContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginBottom: 16,
+    marginBottom: 10,
   },
   infoItem: {
     alignItems: 'center',
   },
   infoText: {
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: 'bold',
     marginTop: 4,
-    left:10
   },
   infoLabel: {
-    fontSize: 13,
-    color: 'rgba(240, 237, 228, 0.5)',
-    left:10
+    fontSize: 14,
+    color: 'white',
   },
   buttonContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 16,
+    justifyContent: 'center',
+    marginBottom: 20,
   },
   button: {
-    backgroundColor: 'rgba(240, 237, 228, 0.5)',
-    paddingHorizontal: 12,
+    backgroundColor: '#7492e2',
+    paddingHorizontal: 8,
     paddingVertical: 6,
     borderRadius: 4,
     alignItems: 'center',
     justifyContent: 'center',
-    top: -200,
-    left: 330,
-  },
-  editProfileButton: {
-    backgroundColor: '#fff',
-    borderWidth: 1,
-    borderColor: '#3897f0',
-  },
-  buttonText: {
-    color: '#fff',
-    fontSize: 14,
-    fontWeight: 'bold',
+    top : -330,
+    left : 130,
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 10,
   },
   postContainer: {
     alignItems: 'center',
-    marginTop: 8,
-    paddingBottom: 24,
+    marginTop: 10,
+    paddingBottom: 10,
   },
   postImage: {
-    width: (windowWidth - 4) / 3,
-    height: (windowWidth - 4) / 3,
+    width: 170,
+    height: 220,
     resizeMode: 'cover',
-    margin: 1,
-    borderRadius:15,
+    margin: 5,
+    borderRadius: 15,
+    borderWidth: 2,
+    borderColor: '#7492e2',
+    
   },
   icon: {
-    left: 177,
-    top: -10,
+    alignSelf: 'center',
+    marginTop: -32,
+    color: 'gold',
   },
-  image: {
-    flex: 1,
-    width: windowWidth,
-    height: windowHeight,
+  followedButton: {
+    backgroundColor: '#7492e2',
+    borderWidth: 2,
+    borderColor: '#d4af37',
   },
+  unfollowedButton: {
+    backgroundColor: '#7492e2',
+  },
+  imageText: {
+    top: -90,
+    left: 60,
+    color: '#7492e2',
+    fontSize: 16,
+    fontWeight: 'bold',},
+
 });
 
 export default Profile;
+
